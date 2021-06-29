@@ -18,6 +18,7 @@ const useStyles = makeStyles({
     flexGrow: 1,
   },
   center: {
+    marginTop: "3vh",
     width: "60%",
   },
   bottom: {
@@ -42,15 +43,15 @@ const useStyles = makeStyles({
     display: "block",
     marginLeft: "auto",
     marginRight: "auto",
-    height: "400px",
     width: "50%",
   },
   card: {
-    marginTop: "20px",
+    marginTop: "3vh",
     border: "1px solid black",
+    marginBottom: "3vh",
   },
   uploadButton: {
-    marginLeft: "50px",
+    marginTop: "20px",
   },
 });
 
@@ -115,14 +116,14 @@ export const ImageUpload = () => {
         {!image && (
           <div className={classes.imgPreview}>
             <div className={classes.previewText}>
-              Please select an Image for Preview
+              Please select an Image to Process
             </div>
           </div>
         )}
         {image && <img src={preview} className={classes.img} />}
         <br />
         <div className={classes.bottom}>
-          <input type="file" onChange={onSelectFile} />
+          <input type="file" onChange={onSelectFile} /><br/>
           <Button
             onClick={sendFile}
             variant="contained"
