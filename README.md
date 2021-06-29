@@ -8,6 +8,8 @@
 pip3 install -r training/requirements.txt
 pip3 install -r api/requirements.txt
 ```
+3. Install Tensorflow Serving ([Setup instructions](https://www.tensorflow.org/tfx/serving/setup))
+
 ## Setup for ReactJS
 1. Install Nodejs ([Setup instructions](https://nodejs.org/en/download/package-manager/))
 2. Install NPM ([Setup instructions](https://www.npmjs.com/get-npm))
