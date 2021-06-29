@@ -1,0 +1,9 @@
+model_config_list {
+ config {
+    name: 'potatoes_model'
+    base_path: '/workspace/local-files/projects/codebasics/plants-detection/potatoes_model'
+    model_platform: 'tensorflow'
+    model_version_policy: {all: {}}
+        }
+}
+
