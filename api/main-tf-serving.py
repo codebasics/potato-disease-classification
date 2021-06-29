@@ -1,12 +1,24 @@
 from fastapi import FastAPI, File, UploadFile
+from fastapi.middleware.cors import CORSMiddleware
 from PIL import Image
 from io import BytesIO
 import numpy as np
 import tensorflow as tf
 import requests
 
-
 app = FastAPI()
+origins = [
+    "http://localhost",
+    "http://localhost:3000",
+]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 class_names = ["Early Blight", "Late Blight", "Healthy"]
 endpoint = "http://localhost:8501/v1/models/potatoes_model/versions/2:predict"
 
@@ -34,7 +46,7 @@ async def alive():
     return {"status": "Alive"}
 
 
-@app.get("/predict")
+@app.post("/predict")
 async def predict_endpoint(
     file: UploadFile = File(...),
 ):
