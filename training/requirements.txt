@@ -1,5 +1,6 @@
-tensorflow==2.5.0
-numpy
 matplotlib
+numpy
 notebook
 tensorflow-addons
+tensorflow-model-optimization
+tensorflow==2.5
