@@ -24,6 +24,7 @@ def download_blob(bucket_name, source_blob_name, destination_file_name):
 
 
 def predict_tflite(image):
+    image = image.resize((256, 256))
     test_image = np.expand_dims(image, axis=0).astype(np.float32)
     interpreter.set_tensor(input_index, test_image)
     interpreter.invoke()
