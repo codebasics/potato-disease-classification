@@ -24,7 +24,7 @@ endpoint = "http://localhost:8501/v1/models/potatoes_model/versions/2:predict"
 
 
 def read_file_as_image(data) -> Image.Image:
-    image = np.array(Image.open(BytesIO(data)))
+    image = np.array(Image.open(BytesIO(data)).convert('RGB'))
     return image
 
 

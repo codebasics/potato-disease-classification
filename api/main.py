@@ -23,7 +23,7 @@ class_names = ["Early Blight", "Late Blight", "Healthy"]
 
 
 def read_file_as_image(data) -> Image.Image:
-    image = np.array(Image.open(BytesIO(data)))
+    image = np.array(Image.open(BytesIO(data)).convert('RGB'))
     return image
 
 
