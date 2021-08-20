@@ -119,6 +119,7 @@ const useStyles = makeStyles((theme) => ({
   },
   text: {
     color: 'white !important',
+    textAlign: 'center',
   },
   buttonGrid: {
     maxWidth: "416px",
