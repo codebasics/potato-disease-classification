@@ -16,7 +16,7 @@ pip3 install -r api/requirements.txt
 3. Install dependencies
 ``` bash
 cd frontend
-npm install
+npm install --from-lock-json
 npm audit fix
 ```
 
