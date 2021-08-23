@@ -281,8 +281,8 @@ export const ImageUpload = () => {
                 Clear
               </ColorButton>
             </Grid>}
-        </Grid>
-      </Container>
-    </React.Fragment>
+        </Grid >
+      </Container >
+    </React.Fragment >
   );
 };
