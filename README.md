@@ -36,7 +36,7 @@ npm audit fix
 2. Install dependencies
 
 ```bash
-cd mobile_app
+cd mobile-app
 yarn install
 cd ios && pod install && cd ../
 ```
@@ -120,10 +120,10 @@ npm run start
 
 ## Running the app
 
-1. Get inside `mobile_app` folder
+1. Get inside `mobile-app` folder
 
 ```bash
-cd mobile_app
+cd mobile-app
 ```
 
 2. Copy the `.env.example` as `.env` and update `URL` to API URL if needed.
