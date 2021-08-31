@@ -1,0 +1,5 @@
+rootProject.name = 'mlDemo'
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
+include ':tflite-react-native'
+project(':tflite-react-native').projectDir = new File(rootProject.projectDir,   '../node_modules/tflite-react-native/android')
+include ':app'
