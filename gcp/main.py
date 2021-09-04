@@ -23,7 +23,7 @@ def download_blob(bucket_name, source_blob_name, destination_file_name):
     print(f"Blob {source_blob_name} downloaded to {destination_file_name}.")
 
 
-def predict_tflite(image):
+def predict_using_tflite_model(image):
     test_image = np.expand_dims(image, axis=0).astype(np.float32)
     interpreter.set_tensor(input_index, test_image)
     interpreter.invoke()
@@ -36,7 +36,37 @@ def predict_tflite(image):
     return predicted_class, confidence
 
 
+def predict_using_regular_model(img):
+    global model
+    img_array = tf.keras.preprocessing.image.img_to_array(img)
+    img_array = tf.expand_dims(img_array, 0)
+    predictions = model.predict(img_array)
+
+    predicted_class = class_names[np.argmax(predictions)]
+    confidence = round(100 * (np.max(predictions)), 2)
+    return predicted_class, confidence
+
+
 def predict(request):
+    global model
+    if model is None:
+        download_blob(
+            BUCKET_NAME,
+            "models/potato-model.h5",
+            "/tmp/potato-model.h5",
+        )
+        model = tf.keras.models.load_model("/tmp/potato-model.h5")
+
+    image = request.files["file"]
+
+    image = np.array(
+        Image.open(image).convert("RGB").resize((256, 256))
+    )[:, :, ::-1]
+    predicted_class, confidence = predict_using_regular_model(image)
+    return {"class": predicted_class, "confidence": confidence}
+
+
+def predict_lite(request):
     global interpreter
     global input_index
     global output_index
@@ -57,5 +87,5 @@ def predict(request):
     image = np.array(
         Image.open(image).convert("RGB").resize((256, 256))
     )[:, :, ::-1]
-    predicted_class, confidence = predict_tflite(image)
+    predicted_class, confidence = predict_using_tflite_model(image)
     return {"class": predicted_class, "confidence": confidence}
