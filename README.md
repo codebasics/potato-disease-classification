@@ -158,7 +158,7 @@ jupyter notebook
 1. Create a [GCP account](https://console.cloud.google.com/freetrial/signup/tos?_ga=2.25841725.1677013893.1627213171-706917375.1627193643&_gac=1.124122488.1627227734.Cj0KCQjwl_SHBhCQARIsAFIFRVVUZFV7wUg-DVxSlsnlIwSGWxib-owC-s9k6rjWVaF4y7kp1aUv5eQaAj2kEALw_wcB).
 2. Create a [Project on GCP](https://cloud.google.com/appengine/docs/standard/nodejs/building-app/creating-project) (Keep note of the project id).
 3. Create a [GCP bucket](https://console.cloud.google.com/storage/browser/).
-4. Upload the tf-lite model generate in the bucket in the path `models/potato-model.tflite`.
+4. Upload the potatoes.h5 model in the bucket in the path `models/potatos.h5`.
 5. Install Google Cloud SDK ([Setup instructions](https://cloud.google.com/sdk/docs/quickstarts)).
 6. Authenticate with Google Cloud SDK.
 
