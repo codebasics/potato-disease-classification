@@ -31,7 +31,7 @@ npm audit fix
 
 ## Setup for React-Native app
 
-1. Initial setup for React-Native app([Setup instructions](https://reactnative.dev/docs/environment-setup/))
+1. Go to the [React Native environment setup](https://reactnative.dev/docs/environment-setup), then select `React Native CLI Quickstart` tab.  
 
 2. Install dependencies
 
