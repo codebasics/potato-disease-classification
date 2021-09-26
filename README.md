@@ -140,6 +140,9 @@ or
 npm run ios
 ```
 
+4. Creating public ([signed APK](https://reactnative.dev/docs/signed-apk-android))
+
+
 ## Creating the TF Lite Model
 
 1. Run Jupyter Notebook in Browser.
