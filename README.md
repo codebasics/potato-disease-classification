@@ -38,6 +38,10 @@ npm audit fix
 ```bash
 cd mobile-app
 yarn install
+```
+
+  - 2.1 Only for mac users
+```bash
 cd ios && pod install && cd ../
 ```
 
